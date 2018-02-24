@@ -8,7 +8,8 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class Splash extends AppCompatActivity {
-    private static int splashInterval = 4000;
+    //mengatur waktu splash selama 3 detik
+    private static int splashInterval = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +18,13 @@ public class Splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//command ini digunakan untuk membuat layar aplikasi menjadi full screen//
         setContentView(R.layout.activity_splash);
 
+        //waktu pengeksekusian dan lama penundaan hingga runnable di eksekusi
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent a = new Intent(Splash.this, Login.class);
+                Intent a = new Intent(Splash.this, Login.class); //pindah screen
                 startActivity(a);
-                Toast.makeText(Splash.this, "Selamat Datang", Toast.LENGTH_LONG).show();
+                Toast.makeText(Splash.this, "Selamat Datang", Toast.LENGTH_LONG).show(); //menampilkan toast
                 this.finish();//untuk menampilkan pop up tulisan yang kita inginkan//
             }
 

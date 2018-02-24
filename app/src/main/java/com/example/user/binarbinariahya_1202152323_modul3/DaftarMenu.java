@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaftarMenu extends AppCompatActivity {
+    //deklarasi variable
     RecyclerView rv;
     menuAdapter adapter;
     List<pilihAir> listmenu;
@@ -21,17 +22,18 @@ public class DaftarMenu extends AppCompatActivity {
         setContentView(R.layout.activity_daftar_menu);
         setTitle("List Air"); //set title untuk screennya
 
-        //untuk meng INIT kan recyclerview dan adapternya//
+        //membuat arraylist baru
         listmenu = new ArrayList<>();
-        rv = findViewById(R.id.listMenu);
+        rv = findViewById(R.id.listMenu); //mendeklarasikan recyclerview
         rv.setHasFixedSize(true);
 
+        //kondisi saat orientasi menjadi landscape
         if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE){
             rv.setLayoutManager(new GridLayoutManager(DaftarMenu.this, 2));
         }else {
             rv.setLayoutManager(new GridLayoutManager(DaftarMenu.this, 1));
         }
-        initdata();
+        initdata(); //menjalankan fungsi init data
     }
 
     @Override
@@ -45,6 +47,7 @@ public class DaftarMenu extends AppCompatActivity {
     }
 
     private void initdata() {
+        //masukkan data ke dalam array
         listmenu.add(new pilihAir(R.drawable.ades, "Ades", "ini adalah air mineral merek Ades. \nAdes (sebelumnya pernah disebut AdeS) adalah merek air mineral atau air minum dalam kemasan (AMDK) yang diproduksi oleh PT. Coca-Cola Bottling Indonesia, Bekasi. Air mineral tersebut juga dikenal sebagai I-Lohas di Jepang. Kini The Coca-Cola Company merupakan pemilik merek dagang Ades, menggantikan PT. Akasha Wira Internasional atau PT. AdeS Waters Indonesia, pemilik merek dagang Ades sebelumnya."));
         listmenu.add(new pilihAir(R.drawable.amidis, "Amidis", "ini adalah air mineral merek Amidis. \nAMIDIS adalah air minum kesehatan yang diproses melalui sistem distilasi atau penyulingan atau penguapan,melalui proses pemanasan hingga 180 derajat celcius sehingga menghasilkan air minum yang murni (NON-MINERAL) tanpa kandungan polutan, mineral anorganik maupun bahan kontaminasi lain seperti bahan kimia maupun bahan pestisida."));
         listmenu.add(new pilihAir(R.drawable.aqua, "Aqua", "ini adalah air mineral merek Aqua. \nAQUA berasal dari sumber mata air yang terpilih dengan segala kemurnian dan kandungan mineral alami yang terpelihara. AQUA dikemas dengan proses higienis dalam beberapa ukuran kemasan botol plastik; 330 ml, 600 ml, 750 ml dan 1500 ml serta kemasan gelas plastik ukuran 240 ml dan kemasan galon 19 l untuk menunjang kegiatan yang dinamis agar terhindar dari dehidrasi."));
@@ -56,8 +59,8 @@ public class DaftarMenu extends AppCompatActivity {
         listmenu.add(new pilihAir(R.drawable.nestle, "Nestle", "ini adalah air mineral merek Nestle. \n“Nestle Pure Life Natural Spring Water”. Di AS sendiri, Nestle PureLife merupakan air murni yang disaring. Pada tahun 2006, merk ini menjadi andalan utama perusahaan. Dua tahun kemudian, Nestle PureLife bahkan menjadi merk paling terkemuka di dunia. Penjualannya mencapai 5 juta air. Hal yang paling menjual dari produk ini yaitu proses pemurnian airnya. Begitupun dengan botol-botolnya, yang sampai mengalami 12 langkah pemurnian dan peningkatan kualitas."));
         listmenu.add(new pilihAir(R.drawable.pristine, "Pristine", "ini adalah air mineral merek Pristine. \nBerawal dari sebagai agen exclusif untuk produk kesehatan di seluruh Indonesia, dengan merek pribadi kami SIMBIO,PT.Super Wahana Tehno, yang juga salah satu anak perusahaan SINARMAS Group,saat ini telah bekerjasama dengan salah satu perusahaan Jepang,Nihon Trim.Co.Ltd.Dengan teknologi dan di bawah pengawasan dari Nihon Trim Co.Ltd ,sejak November 2006,PT.Super Wahana Tehno telah memproduksi dan meluncurkan produk baru yaitu : air mineral ionisasi,untuk yang pertama kali dan satu-satunya di Indonesia dengan merk PRISTINE."));
         listmenu.add(new pilihAir(R.drawable.vit, "Vit", "ini adalah air mineral merek VIT. \n merek air minum dalam kemasan (AMDK) yang diproduksi oleh PT Tirta Investama di Indonesia. Mulai diproduksi sejak tanggal 16 November 1982 dan awalnya dimiliki oleh PT Varia Industri Tirta. Pada tanggal 17 Juli 1987 kepemilikan PT Varia Industri Tirta beralih kepada Tirto Utomo. Sebelas tahun kemudian, setelah melakukan merger dengan PT Varia Industri Tirta, PT Tirta Investama menjadi pemilik merek VIT."));
-        adapter = new menuAdapter(this, listmenu);
-        rv.setAdapter(adapter);
+        adapter = new menuAdapter(this, listmenu); //membuat adapter yang mengubungkan kelas ini dengan data yang ditampilkan
+        rv.setAdapter(adapter); //menghubungkan recyclerview dengan adapter
     }
 }
 

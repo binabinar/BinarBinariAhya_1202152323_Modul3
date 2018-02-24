@@ -5,16 +5,19 @@ package com.example.user.binarbinariahya_1202152323_modul3;
  */
 
 public class pilihAir {
+    //deklarasi variable
     int foto;
     String nama;
     String detail;
 
+    //method setter
     public pilihAir(int foto, String nama, String detail) {
         this.foto = foto;
         this.nama = nama;
         this.detail = detail;
     }
 
+    //method getter
     public int getFoto() {
         return foto;
     }
