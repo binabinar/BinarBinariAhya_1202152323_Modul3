@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
 
         }else if (!nama.equals("EAD") && !word.equals("MOBILE")){
-            Toast.makeText(this, "Username atau Password Salah", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Username dan Password tidak cocok", Toast.LENGTH_LONG).show();
 
         }else if (nama.isEmpty() && word.isEmpty()){
             Toast.makeText(this, "Isi dulu username dan passwordnya", Toast.LENGTH_LONG).show();
